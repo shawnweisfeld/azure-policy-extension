@@ -1,0 +1,33 @@
+{
+    "manifestVersion": 1,
+    "id": "azure-policy-extension",
+    "publisher": "ShawnWeisfeld",
+    "version": "1.0.10",
+    "name": "Azure Policy Extension",
+    "description": "Use this extension to deploy a folder of Azure Policies",
+    "public": false,
+    "categories": ["Build and release"],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"
+    },
+    "files": [{
+            "path": "AzurePolicyDeploy"
+        }
+    ],
+    "contributions": [{
+            "id": "AzurePolicyDeploy",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "AzurePolicyDeploy"
+            }
+        }
+    ]
+}

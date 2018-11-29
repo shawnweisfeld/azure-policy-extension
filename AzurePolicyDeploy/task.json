@@ -1,0 +1,39 @@
+{
+    "id": "7c939663-33ca-4cb6-9b8c-6e164d446eea",
+    "name": "AzurePolicyDeploy",
+    "friendlyName": "AzurePolicyDeploy",
+    "description": "AzurePolicyDeploy",
+    "helpMarkDown": "[More Information](http://go.microsoft.com/fwlink/?LinkID=613724)",
+    "category": "Build",
+    "visibility": [
+                "Build"
+                  ],    
+    "author": "Microsoft Corporation",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "demands" : [
+        "msbuild"
+    ],
+    "minimumAgentVersion": "1.99.0",
+    "groups": [  ],
+    "inputs": [
+        { 
+            "name": "yourname", 
+            "type": "string", 
+            "label": "Your Name", 
+            "defaultValue":"", 
+            "required":true
+        }
+    ],
+    "instanceNameFormat": "Deploy Policy",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\AzurePolicyDeploy.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}
