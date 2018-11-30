@@ -10,17 +10,17 @@ Set-Location -Path $rootDirectory -PassThru
 
 if(!$subscriptionId -and !$managementGroupName)
 {
-    Throw "Unable to create policy: `$(SubscriptionId) '$subscriptionId' or `$(ManagementGroupName) '$managementGroupName' were not provided. Either may be provided, but not both."
+    Throw "Unable to create policy: Subscription Id or Management Group Name were not provided. Either may be provided, but not both."
 }
 
 if ($subscriptionId -and $managementGroupName)
 {
-    Throw "Unable to create policy: `$(SubscriptionId) '$subscriptionId' and `$(ManagementGroupName) '$managementGroupName' were both provided. Either may be provided, but not both."
+    Throw "Unable to create policy: Subscription Id and Management Group Name were both provided. Either may be provided, but not both."
 }
 
 if ($managementGroupName -and $resourceGroupName)
 {
-    Throw "Unable to create policy: `$(ManagementGroupName) '$managementGroupName' and `$(ResourceGroupName) '$resourceGroupName' were both provided. Either may be provided, but not both."
+    Throw "Unable to create policy: Management Group Name and Resource Group Name were both provided. Either may be provided, but not both."
 }
 
 $azureRMModule = (Get-Module -Name AzureRM)
