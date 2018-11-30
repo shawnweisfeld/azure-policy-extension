@@ -1,0 +1,31 @@
+{
+    "id": "e7386ad2-2703-4985-a1b3-3e4091a14e6e",
+    "name": "AzurePolicyBuild",
+    "friendlyName": "AzurePolicyBuild",
+    "description": "AzurePolicyBuild will validate your Azure Policy",
+    "helpMarkDown": "[More Information](http://go.microsoft.com/fwlink/?LinkID=613724)",
+    "category": "Build",
+    "visibility": [
+                "Build"
+                  ],    
+    "author": "Microsoft Corporation",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 0
+    },
+    "demands" : [
+        "msbuild"
+    ],
+    "minimumAgentVersion": "1.99.0",
+    "groups": [  ],
+    "inputs": [  ],
+    "instanceNameFormat": "Build Policy",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\AzurePolicyBuild.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}
